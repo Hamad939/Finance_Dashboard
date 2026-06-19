@@ -10,7 +10,7 @@ const navItems = [
   { label: "Reports Section", icon: FileText, id: "reports-section" },
 ];
 
-const Navigation = ({ isSidebarOpen, setIsSidebarOpen }) => {
+const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const isDark = useSelector((state) => state.theme.isDark);
   const handleScroll = (id) => {
     const element = document.getElementById(id);
@@ -75,4 +75,4 @@ const Navigation = ({ isSidebarOpen, setIsSidebarOpen }) => {
   );
 };
 
-export default Navigation;
+export default Sidebar;

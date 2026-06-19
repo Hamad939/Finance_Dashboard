@@ -1,4 +1,4 @@
-import Navigation from "./Navigation/Navigation";
+import Sidebar from "./Sidebar/Sidebar";
 import Header from "./Header/Header";
 import DashboardData from "./dashboardData/DashboardData";
 import { useState } from "react";
@@ -19,7 +19,7 @@ const DashboardLayout = () => {
           isSidebarOpen ? "md:w-64" : "md:w-0"
         }`}
       >
-        <Navigation
+        <Sidebar
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />
