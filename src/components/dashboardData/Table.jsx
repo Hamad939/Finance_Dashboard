@@ -77,14 +77,6 @@ const Table = ({ tableData }) => {
     return 0;
   });
 
-  const sortIconClass = (field) => {
-    if (sortField === field) {
-      return "text-slate-500";
-    }
-
-    return "text-slate-100";
-  };
-
   return (
     <div className="rounded-xl border border-slate-200 w-[95%] mx-auto p-6">
       <div className="flex justify-center md:justify-between w-full items-center  mb-4 ">
@@ -120,13 +112,10 @@ const Table = ({ tableData }) => {
                   <button
                     type="button"
                     onClick={() => handleSort(column.key)}
-                    className="flex items-center gap-2 font-semibold  transition-colors duration-200 hover:scale-105"
+                    className="  flex items-center gap-2 font-semibold  transition-colors duration-200 hover:scale-105"
                   >
                     {column.label}
-                    <ArrowUpDown
-                      size={14}
-                      className={sortIconClass(column.key)}
-                    />
+                    <ArrowUpDown className="active:opacity-50" size={14} />
                   </button>
                 </th>
               ))}
