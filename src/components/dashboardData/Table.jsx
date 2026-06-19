@@ -79,10 +79,10 @@ const Table = ({ tableData }) => {
 
   const sortIconClass = (field) => {
     if (sortField === field) {
-      return "text-slate-900";
+      return "text-slate-500";
     }
 
-    return "text-slate-400";
+    return "text-slate-100";
   };
 
   return (

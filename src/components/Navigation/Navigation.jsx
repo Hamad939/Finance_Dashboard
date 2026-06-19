@@ -1,14 +1,27 @@
 import { BarChart3, FileText, LayoutDashboard, X } from "lucide-react";
 import { useSelector } from "react-redux";
 const navItems = [
-  { label: "Dashboard Overview", icon: LayoutDashboard },
-  { label: "Analytics Area", icon: BarChart3 },
-  { label: "Reports Section", icon: FileText },
+  {
+    label: "Financial Overview",
+    icon: LayoutDashboard,
+    id: "financial-overview",
+  },
+  { label: "Analytics Area", icon: BarChart3, id: "analytics-area" },
+  { label: "Reports Section", icon: FileText, id: "reports-section" },
 ];
 
 const Navigation = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const isDark = useSelector((state) => state.theme.isDark);
-
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    // Optional: Close mobile sidebar after clicking a link
+    if (window.innerWidth < 768) {
+      setIsSidebarOpen(false);
+    }
+  };
   return (
     <>
       <div
@@ -44,9 +57,12 @@ const Navigation = ({ isSidebarOpen, setIsSidebarOpen }) => {
               : "-translate-x-3 scale-95 opacity-0"
           }`}
         >
-          {navItems.map(({ label, icon: Icon }) => (
+          {navItems.map(({ label, icon: Icon, id }) => (
             <button
               key={label}
+              onClick={() => {
+                handleScroll(id);
+              }}
               className="flex w-full cursor-pointer items-center gap-3 rounded-xl p-3 text-left text-sm font-medium  transition-colors duration-200 hover:bg-slate-200/70 hover:text-slate-950"
             >
               <Icon size={18} className="flex-none text-slate-500" />
