@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 const KpiCard = ({ kpiData }) => {
   const isDark = useSelector((state) => state.theme.isDark);

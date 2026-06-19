@@ -1,4 +1,3 @@
-import React from "react";
 import { CircleUser, Menu, Moon, Sun } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../slices/ThemeSlice";
